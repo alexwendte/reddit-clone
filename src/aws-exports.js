@@ -3,10 +3,10 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "ap-southeast-2:8769a63c-940d-4ee3-b838-fae7f229678f",
-    "aws_cognito_region": "ap-southeast-2",
-    "aws_user_pools_id": "ap-southeast-2_HqPTs16Lh",
-    "aws_user_pools_web_client_id": "6j9thcjopeh1edenenhjo6qchp",
+    "aws_cognito_identity_pool_id": "us-east-1:e3690986-b1df-496a-a292-b93e9bf21fcc",
+    "aws_cognito_region": "us-east-1",
+    "aws_user_pools_id": "us-east-1_1J36eRrpE",
+    "aws_user_pools_web_client_id": "2fmmer6hket0ddc5ga61rdvo6k",
     "oauth": {},
     "aws_cognito_login_mechanisms": [
         "PREFERRED_USERNAME"
@@ -25,12 +25,12 @@ const awsmobile = {
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
-    "aws_appsync_graphqlEndpoint": "https://5ec7bh3mqrddpihjxougr34ioq.appsync-api.ap-southeast-2.amazonaws.com/graphql",
-    "aws_appsync_region": "ap-southeast-2",
+    "aws_appsync_graphqlEndpoint": "https://ppnvkqmzarbstkcxwtkt5e7bqy.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-gfouhbqitvcbfm5htnhvyoyyja",
-    "aws_user_files_s3_bucket": "redditclonea4f35ee94c414237ada7a8e3f084e8ed154921-dev",
-    "aws_user_files_s3_bucket_region": "ap-southeast-2"
+    "aws_appsync_apiKey": "da2-3tpb6syinbcprnqjzna4omsbya",
+    "aws_user_files_s3_bucket": "redditclonea4f35ee94c414237ada7a8e3f084e8ed140833-uat",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 
