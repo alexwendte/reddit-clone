@@ -88,7 +88,12 @@ export default function Signup() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
-      <Grid container direction="column" alignItems="center" justify="center">
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
         <Grid item>
           <TextField
             variant="outlined"
