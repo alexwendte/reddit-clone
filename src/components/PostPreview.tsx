@@ -203,6 +203,7 @@ export default function PostPreview({ post }: Props): ReactElement {
                     height={540}
                     width={980}
                     layout="intrinsic"
+                    objectFit="contain"
                   />
                 </Grid>
               )}

@@ -1,23 +1,3 @@
-type Post
-  @model
-  @auth(
-    rules: [
-      # Owner can perform any action on their own Post
-      { allow: owner, operations: [create, update, delete, read] }
-      # Other signed in users can read everyones posts
-      { allow: private, operations: [read] }
-      # Non-signed in users (guests) can read everyones posts as well.
-      { allow: public, operations: [read] }
-    ]
-  ) {
-  id: ID!
-  title: String!
-  contents: String!
-  image: String
-  votes: [Vote!]! @connection(keyName: "byVote", fields: ["id"])
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
-}
-
 type Comment
   @model
   @key(name: "byPost", fields: ["postID", "content"])
@@ -34,9 +14,8 @@ type Comment
   content: String!
 }
 
-type Vote
+type Post
   @model
-  @key(name: "byVote", fields: ["postID", "vote"])
   @auth(
     rules: [
       { allow: owner, operations: [create, update, delete, read] }
@@ -45,8 +24,25 @@ type Vote
     ]
   ) {
   id: ID!
-  vote: String!
-  postID: ID!
-  post: Post @connection(fields: ["postID"])
+  title: String!
+  contents: String!
+  image: String
+  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+  votes: [Vote] @connection(keyName: "byPost", fields: ["id"])
 }
- 
+
+type Vote
+  @model
+  @key(name: "byPost", fields: ["postID"])
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: owner }
+      { allow: private, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  vote: String!
+  post: Post @connection
+  postID: ID
+}
