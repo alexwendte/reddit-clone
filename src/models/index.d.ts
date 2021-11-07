@@ -29,10 +29,11 @@ export declare class Comment {
 export declare class Post {
   readonly id: string;
   readonly title: string;
-  readonly contents: string;
+  readonly slug?: string;
   readonly image?: string;
   readonly comments?: (Comment | null)[];
   readonly votes?: (Vote | null)[];
+  readonly contents: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Post, PostMetaData>);
